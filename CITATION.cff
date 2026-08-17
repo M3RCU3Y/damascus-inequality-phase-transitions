@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this verification repository and the associated research article."
+title: "Verification materials for Geometry, Escape, and Phase Transitions in Violation Sets for the Generalized Damascus Inequality"
+type: software
+authors:
+  - family-names: Deonarine
+    given-names: Brandon
+version: "0.10.0"
+date-released: 2026-08-17
+repository-code: "https://github.com/M3RCU3Y/damascus-inequality-phase-transitions"
+url: "https://github.com/M3RCU3Y/damascus-inequality-phase-transitions"
+license: MIT

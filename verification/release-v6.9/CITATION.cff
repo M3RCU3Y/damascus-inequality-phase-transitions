@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "This CFF describes the exact verification-software supplement. Cite the research manuscript separately; after archival deposition, also cite the supplement DOI."
+title: "Exact verification supplement for Geometry, Escape, and Phase Transitions in Violation Sets for the Generalized Damascus Inequality"
+type: software
+authors:
+  - family-names: Deonarine
+    given-names: Brandon
+version: "0.6"
+date-released: 2026-08-12
+url: "https://brandondeonarine.com/"
+license: CC-BY-4.0

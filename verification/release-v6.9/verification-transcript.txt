@@ -1,0 +1,82 @@
+Python 3.12.13 (CPython)
+Supplement directory: C:\Users\brand\OneDrive\Documents\VS Code\Papers\Proofs stuff\Damascus Papers\Paper 2 - Phase Transitions\verification-supplement
+
+=== verify_manifest.py ===
+MANIFEST VERIFIED: 18 files
+
+=== damascus_exact_audit.py ===
+exact flip 1->2:  0.00623800975801, -0.003663003662
+exact flip 2->3:  3.83391481041e-05, -0.00226277565938
+exact flip 3->4:  0.0181583343025, -0.0153524642445
+exact flip 4->5:  0.00850635203997, -0.00157268637193
+exact flip 5->6:  0.0102430011941, -0.0248813512232
+exact flip 6->7:  0.014777996765, -0.0286628553974
+exact flip 7->8:  0.000213459695552, -0.000465887456029
+exact flip 8->9:  0.00399934120629, -0.00371408097001
+re-entry exact signs and L=181/420 checked
+critical escape factorization checked
+Taylor coefficients through order five checked
+inversion identity checked for n=1..12
+global and sign-count moment sharpness vectors checked
+uniform-family exact base and ratio inequalities checked
+M_4<1/2<M_5 root certificates checked
+radial decomposition exact tests checked
+80-digit uniform-family sweep n=9..60 passed (independent numerical audit)
+ALL EXACT SYMBOLIC ASSERTIONS PASSED
+
+=== damascus_continuous_audit.py ===
+CONTINUOUS ONSET, EXPONENT, AND CRITICAL-SPHERE SYMBOLIC AUDIT PASSED
+
+=== damascus_open_problems_audit.py ===
+OPEN-PROBLEM AUDIT: exact n=7 off-axis bifurcation VERIFIED
+OPEN-PROBLEM AUDIT: I_(15/2)^4 not subset I_8^4 VERIFIED
+OPEN-PROBLEM AUDIT: telescoping-pulse rational margin VERIFIED
+OPEN-PROBLEM AUDIT: telescoped radius/dimension counts VERIFIED
+OPEN-PROBLEM EXACT AUDIT PASSED
+
+=== damascus_bernstein_verify.py ===
+VERIFIED n=2 2+2 exclusion: 105/105 Bernstein coefficients positive
+VERIFIED n=3 2+2 exclusion: 675/675 Bernstein coefficients positive
+VERIFIED 4->5: nodes=33, leaves=17, maxdepth=5
+VERIFIED 5->6: nodes=339, leaves=170, maxdepth=7
+VERIFIED 6->7: nodes=2591, leaves=1296, maxdepth=9
+ALL PACKAGED BERNSTEIN CERTIFICATES VERIFIED
+
+=== damascus_bernstein_verify_independent.py ===
+STANDALONE VERIFIED n=2: 105/105 coefficients positive
+STANDALONE VERIFIED n=3: 675/675 coefficients positive
+STANDALONE VERIFIED 4->5: nodes=33, leaves=17, maxdepth=5
+STANDALONE VERIFIED 5->6: nodes=339, leaves=170, maxdepth=7
+STANDALONE VERIFIED 6->7: nodes=2591, leaves=1296, maxdepth=9
+STANDALONE INDEPENDENT BERNSTEIN VERIFICATION PASSED
+
+=== damascus_topology_verify.py ===
+TOPOLOGY STURM CERT VERIFIED: variations [6, 6, 5, 4, 4]
+TOPOLOGY BERNSTEIN CERT VERIFIED: {'nodes': 9, 'leaves': 5, 'F': 4, 'H': 1}
+FIXED-EXPONENT TOPOLOGY CERTIFICATE PASSED
+
+=== damascus_staircase_verify.py all --jobs 4 ===
+LOCAL TAYLOR DERIVATIVE CERTIFICATES VERIFIED
+CERTIFIED n=1 sector 8+3: top_boxes=3300, solved=3300, exact_nodes=631726, worst_subtree=108703, jobs=4, time=32.56s
+CERTIFIED n=1 sector 9+2: top_boxes=2200, solved=2200, exact_nodes=565317, worst_subtree=49930, jobs=4, time=28.98s
+CERTIFIED n=1 sector 2+9: top_boxes=2200, solved=2200, exact_nodes=3181, worst_subtree=510, jobs=4, time=1.27s
+CERTIFIED n=1 sector 3+8: top_boxes=3300, solved=3300, exact_nodes=7156, worst_subtree=1806, jobs=4, time=1.41s
+CERTIFIED n=1 sector 4+7: top_boxes=4200, solved=4200, exact_nodes=14749, worst_subtree=3649, jobs=4, time=1.88s
+CERTIFIED n=1 sector 5+6: top_boxes=4704, solved=4704, exact_nodes=24567, worst_subtree=4738, jobs=4, time=2.38s
+CERTIFIED n=1 sector 6+5: top_boxes=4704, solved=4704, exact_nodes=34772, worst_subtree=5895, jobs=4, time=2.76s
+CERTIFIED n=1 sector 7+4: top_boxes=4200, solved=4200, exact_nodes=78931, worst_subtree=3992, jobs=4, time=4.87s
+LOWER BOUND d1>=12 VERIFIED (maximal safe dimension m=11)
+CERTIFIED n=2 sector 2+4: top_boxes=350, solved=350, exact_nodes=54249, worst_subtree=52822, jobs=4, time=4.93s
+CERTIFIED n=2 sector 3+3: top_boxes=400, solved=400, exact_nodes=129021, worst_subtree=124956, jobs=4, time=11.22s
+CERTIFIED n=2 sector 4+2: top_boxes=350, solved=350, exact_nodes=56746, worst_subtree=52595, jobs=4, time=5.17s
+LOWER BOUND d2>=7 VERIFIED (maximal safe dimension m=6)
+CERTIFIED n=3 sector 2+3: top_boxes=200, solved=200, exact_nodes=175022, worst_subtree=174533, jobs=4, time=14.53s
+CERTIFIED n=3 sector 3+2: top_boxes=200, solved=200, exact_nodes=210259, worst_subtree=208808, jobs=4, time=17.88s
+LOWER BOUND d3>=6 VERIFIED (maximal safe dimension m=5)
+STAIRCASE LOWER-CELL VERIFICATION PASSED in 132.93 s
+
+=== verify_manifest.py ===
+MANIFEST VERIFIED: 18 files
+
+LOWER BOUNDS d1>=12, d2>=7, d3>=6 VERIFIED
+ALL MANUSCRIPT VERIFICATION SUITES PASSED

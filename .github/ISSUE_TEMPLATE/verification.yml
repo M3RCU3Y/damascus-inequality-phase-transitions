@@ -1,0 +1,31 @@
+name: Verification issue
+description: Report a reproducibility or certificate-replay problem.
+title: "[verification] "
+labels: ["verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please include enough information to reproduce the failure.
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: The exact command that failed.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python version, and Node.js version.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: Paste the relevant error output.
+      render: shell
+    validations:
+      required: true

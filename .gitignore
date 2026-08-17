@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+node_modules/
+
+# Manuscript and generated publication artifacts are not part of this repo.
+manuscript/
+paper/
+*.tex
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.xdv
+*.synctex.gz
+
+# Working directories and internal handoff material.
+archive/
+verification-python-packages/
+*HANDOFF*
+*REVIEW_AND_VERIFICATION_NOTES*
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

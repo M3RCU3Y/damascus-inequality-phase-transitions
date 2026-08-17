@@ -1,0 +1,10 @@
+* text=auto
+*.py text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Preserve the published V6.9 supplement byte-for-byte for its SHA-256 manifest.
+verification/release-v6.9/** -text
