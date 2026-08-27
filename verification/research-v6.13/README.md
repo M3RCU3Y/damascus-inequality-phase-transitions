@@ -59,6 +59,23 @@ integer exponent `n>=4`.
 - proof note: `TOPOLOGY_FOUR_ALL_N_RESULT.md`
 - exact finite/uniform audit: `topology_four_all_n_audit.py`
 
+### High-exponent zero-width inclusion failure
+
+For every sufficiently large real target exponent `mu`, there is
+`delta_mu>0` such that
+
+\[
+I_{\mu-\varepsilon}^4\not\subseteq I_\mu^4
+\qquad(0<\varepsilon<\delta_\mu).
+\]
+
+Thus the local forward-inclusion width is zero at high exponent. The earlier
+`B sqrt(mu) 2^(-mu/2)` theorem remains an explicit construction, but its scale
+and the constant `sqrt(6)` are not sharp phase-boundary data.
+
+- proof note: `CONTINUOUS_ZERO_WIDTH_RESULT.md`
+- high-precision sanity replay: `continuous_zero_width_check.py`
+
 Run from this directory:
 
 ```bash
@@ -67,6 +84,7 @@ python reentry_r5_witness.py
 python reentry_r5_verify.py
 python topology_all_n_audit.py
 python topology_four_all_n_audit.py
+python continuous_zero_width_check.py
 ```
 
 The exact witness scripts use `Fraction` arithmetic. The order-five upper
@@ -75,7 +93,8 @@ Bernstein arithmetic near the origin, outward-rounded high-precision interval
 bounds on the compact middle interval, and an analytic exponential tail bound.
 The all-exponent pocket audit uses exact integer Bernstein arithmetic for the
 finite low exponents and exact rational interval arithmetic for the uniform
-Taylor remainder bound.
+Taylor remainder bound. The zero-width theorem is analytic; its decimal replay
+is deliberately only a numerical check of the displayed limits and signs.
 
 ## Current boundary
 
@@ -84,3 +103,7 @@ the normalized order-six Wronskian changes sign. Consequently the six-radius
 upper bound requires additional structure, such as the product-one
 multiplicity constraint, rather than a direct repetition of the order-five
 Chebyshev proof.
+
+The complete finite real-exponent four-variable inclusion boundary and the
+topology of the full four-variable violation set after trace gluing remain
+open.
