@@ -41,6 +41,7 @@ def research_checks() -> None:
     python_script(RESEARCH_613, "reentry_r5_verify.py")
     python_script(RESEARCH_613, "topology_all_n_audit.py")
     python_script(RESEARCH_613, "topology_four_all_n_audit.py")
+    python_script(RESEARCH_613, "full_four_topology_audit.py")
     python_script(RESEARCH_613, "continuous_zero_width_check.py")
 
 
