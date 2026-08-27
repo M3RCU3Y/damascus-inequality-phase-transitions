@@ -29,21 +29,16 @@ The sharp integer-exponent re-entry complexity for five reciprocal radii is
 R(5)=4.
 \]
 
-Files:
-
-- `REENTRY_R5_RESULT.md` — theorem statement and proof/certificate map;
-- `reentry_r5_witness.py` — exact rational replay of a five-radius point with
-  four membership changes;
-- `reentry_r5_verify.py` — order-five radial Chebyshev certificate proving the
-  matching upper bound.
+- proof note: `REENTRY_R5_RESULT.md`
+- exact rational witness: `reentry_r5_witness.py`
+- matching upper-bound certificate: `reentry_r5_verify.py`
 
 ### Uniform three-variable topology
 
 For every integer `n>=4`, the violation set `I_n^3` has exactly three
 connected components, one for each choice of the coordinate below one. Each
-component is simply connected and hence contractible. In particular, the
-off-axis tongues first visible at exponent `7` remain attached and create no
-new component or hole.
+component is simply connected and contractible. The off-axis tongues first
+visible at exponent `7` remain attached and create no new component or hole.
 
 - proof note: `TOPOLOGY_ALL_N_RESULT.md`
 - exact algebra/combinatorics audit: `topology_all_n_audit.py`
@@ -58,6 +53,31 @@ integer exponent `n>=4`.
 
 - proof note: `TOPOLOGY_FOUR_ALL_N_RESULT.md`
 - exact finite/uniform audit: `topology_four_all_n_audit.py`
+
+### Full four-variable topology
+
+The persistent `3+1` cores admit a continuous-exponent Morse/compactification
+classification. There is a unique continuous birth at
+
+\[
+\nu_{31}=1.927014405732976\ldots,
+\]
+
+and no later interior zero-critical event. Boundary crossings are transverse
+in the full compactified core and only open or close collars/ends.
+Consequently
+
+\[
+I_1^4=\varnothing,
+\]
+
+and for every integer `n>=2`, the full four-variable violation set has exactly
+four connected components, indexed by the persistent lone-below coordinate;
+every component is contractible. For `n>=4`, the ordered `2+2` pockets retract
+onto traces inside these four persistent components and add no homotopy.
+
+- proof note: `TOPOLOGY_FOUR_FULL_RESULT.md`
+- exact symbolic/Sturm audit: `full_four_topology_audit.py`
 
 ### High-exponent zero-width inclusion failure
 
@@ -84,26 +104,17 @@ python reentry_r5_witness.py
 python reentry_r5_verify.py
 python topology_all_n_audit.py
 python topology_four_all_n_audit.py
+python full_four_topology_audit.py
 python continuous_zero_width_check.py
 ```
 
-The exact witness scripts use `Fraction` arithmetic. The order-five upper
-verifier derives the Wronskian polynomial symbolically, uses exact rational
-Bernstein arithmetic near the origin, outward-rounded high-precision interval
-bounds on the compact middle interval, and an analytic exponential tail bound.
-The all-exponent pocket audit uses exact integer Bernstein arithmetic for the
-finite low exponents and exact rational interval arithmetic for the uniform
-Taylor remainder bound. The zero-width theorem is analytic; its decimal replay
-is deliberately only a numerical check of the displayed limits and signs.
-
 ## Current boundary
 
-The analogous unrestricted derivative-kernel argument fails at order six:
-the normalized order-six Wronskian changes sign. Consequently the six-radius
-upper bound requires additional structure, such as the product-one
-multiplicity constraint, rather than a direct repetition of the order-five
-Chebyshev proof.
+The unrestricted derivative-kernel argument fails at order six: the normalized
+order-six Wronskian changes sign. Consequently the six-radius upper bound
+requires additional structure, such as the product-one multiplicity
+constraint, rather than a direct repetition of the order-five Chebyshev proof.
 
-The complete finite real-exponent four-variable inclusion boundary and the
-topology of the full four-variable violation set after trace gluing remain
-open.
+The remaining principal questions are the complete finite real-exponent
+four-variable inclusion boundary and the sharp general upper bound/minimum
+dimension for re-entry complexity.
