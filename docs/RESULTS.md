@@ -61,10 +61,34 @@ exactly $N+2$ reciprocal radii in dimension $2N+3$.
 - proof note: `verification/research-v6.10/REENTRY_NPLUS2_RESULT.md`
 - exact bookkeeping audit: `verification/research-v6.10/reentry_nplus2_audit.js`
 
+## Focused V6.13 result
+
+### Exact five-radius re-entry complexity
+
+For points using exactly five reciprocal radii, the sharp integer-exponent
+membership-change count is
+
+\[
+R(5)=4.
+\]
+
+The lower bound is an exact rational witness. The upper bound is certified by
+an order-five extended-Chebyshev argument for the radial derivative kernel,
+with exact symbolic reduction, rational Bernstein bounds near the origin,
+outward-rounded interval arithmetic on the compact middle range, and an
+analytic exponential tail bound.
+
+- proof note: `verification/research-v6.13/REENTRY_R5_RESULT.md`
+- order-five verifier: `verification/research-v6.13/reentry_r5_verify.py`
+- exact witness replay: `verification/research-v6.13/reentry_r5_witness.py`
+
+The unrestricted order-six derivative kernel is not an ECT system, so the same
+upper-bound mechanism does not automatically settle the six-radius case.
+
 ## Open questions
 
 - topology of the three-variable off-axis tongues from exponent $7$ onward;
 - extension of the four-variable interval-bundle certificate beyond exponent
   $10$ and attachment of its coordinate traces;
 - the complete real-exponent four-variable inclusion region; and
-- the sharp upper bound and minimum dimension for re-entry complexity.
+- the sharp general upper bound and minimum dimension for re-entry complexity.

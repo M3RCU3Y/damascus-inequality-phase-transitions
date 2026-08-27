@@ -13,6 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parent
 LEGACY = ROOT / "verification" / "release-v6.9"
 RESEARCH = ROOT / "verification" / "research-v6.10"
+RESEARCH_613 = ROOT / "verification" / "research-v6.13"
 
 
 def run(command: list[str], cwd: Path) -> None:
@@ -34,6 +35,9 @@ def research_checks() -> None:
         raise SystemExit("Node.js is required for the V6.10 exact audits")
     run([node, str(RESEARCH / "topology_four_exact.js")], RESEARCH)
     run([node, str(RESEARCH / "reentry_nplus2_audit.js")], RESEARCH)
+
+    python_script(RESEARCH_613, "reentry_r5_witness.py")
+    python_script(RESEARCH_613, "reentry_r5_verify.py")
 
 
 def quick_checks() -> None:
@@ -64,7 +68,7 @@ def main() -> None:
     mode.add_argument(
         "--research-only",
         action="store_true",
-        help="run only the focused V6.10 checks",
+        help="run only the focused research checks",
     )
     args = parser.parse_args()
 
