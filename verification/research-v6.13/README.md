@@ -48,6 +48,17 @@ new component or hole.
 - proof note: `TOPOLOGY_ALL_N_RESULT.md`
 - exact algebra/combinatorics audit: `topology_all_n_audit.py`
 
+### Uniform four-variable ordered pockets
+
+For every integer `n>=4`, each ordered strict `2+2` pocket is an interval
+bundle over its labelled three-variable trace sector. Adding its coordinate-1
+trace gives a strong deformation retraction onto that trace. Consequently the
+strict `2+2` locus has exactly twelve contractible components for every
+integer exponent `n>=4`.
+
+- proof note: `TOPOLOGY_FOUR_ALL_N_RESULT.md`
+- exact finite/uniform audit: `topology_four_all_n_audit.py`
+
 Run from this directory:
 
 ```bash
@@ -55,12 +66,16 @@ python reentry_kminus1_base.py
 python reentry_r5_witness.py
 python reentry_r5_verify.py
 python topology_all_n_audit.py
+python topology_four_all_n_audit.py
 ```
 
 The exact witness scripts use `Fraction` arithmetic. The order-five upper
 verifier derives the Wronskian polynomial symbolically, uses exact rational
 Bernstein arithmetic near the origin, outward-rounded high-precision interval
-bounds on the compact middle interval, and an analytic tail estimate.
+bounds on the compact middle interval, and an analytic exponential tail bound.
+The all-exponent pocket audit uses exact integer Bernstein arithmetic for the
+finite low exponents and exact rational interval arithmetic for the uniform
+Taylor remainder bound.
 
 ## Current boundary
 
