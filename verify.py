@@ -39,6 +39,7 @@ def research_checks() -> None:
     python_script(RESEARCH_613, "reentry_kminus1_base.py")
     python_script(RESEARCH_613, "reentry_r5_witness.py")
     python_script(RESEARCH_613, "reentry_r5_verify.py")
+    python_script(RESEARCH_613, "topology_all_n_audit.py")
 
 
 def quick_checks() -> None:
