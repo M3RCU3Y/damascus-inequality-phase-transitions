@@ -18,12 +18,13 @@ stage.
 - the finite lower-cell checks in the minimum-dimension nesting staircase;
 - the four-variable Bernstein certificates through the sharp one-step
   threshold;
-- three-variable fixed-exponent topology at $n=4,5,6$;
-- the strict four-variable $2+2$ pocket classification at $n=4,5,6$ and
-  its interval-bundle reduction through $n=10$;
+- three-variable fixed-exponent topology for every integer exponent $n\ge4$;
+- the strict four-variable $2+2$ pocket classification and ordered
+  interval-bundle reduction for every integer exponent $n\ge4$;
 - exact rational witnesses for off-axis and noninteger inclusion failures;
-- the high-exponent near-diagonal failure construction; and
-- the $N+2$-radius, $2N+3$-dimensional re-entry construction.
+- the high-exponent near-diagonal failure construction;
+- the improved general re-entry construction $R(k)\ge k-1$; and
+- the exact five-radius re-entry result $R(5)=4$.
 
 The scope and status of each item are summarized in
 [docs/RESULTS.md](docs/RESULTS.md).
@@ -33,7 +34,8 @@ The scope and status of each item are summarized in
 ```text
 verification/
   release-v6.9/       immutable verification supplement
-  research-v6.10/     later focused certificates and proof notes
+  research-v6.10/     focused follow-up certificates
+  research-v6.13/     later uniform topology and re-entry results
 docs/
   RESULTS.md
   REPRODUCIBILITY.md

@@ -39,8 +39,8 @@ bundle over its labelled three-variable trace sector.
 - proof note: `verification/research-v6.10/TOPOLOGY_FOUR_PARTIAL_RESULT.md`
 - exact audit: `verification/research-v6.10/topology_four_exact.js`
 
-This does not classify components of the full four-variable violation set.
-Coordinate-trace attachments remain a separate problem.
+The later V6.13 theorem removes both finite cutoffs for the strict ordered
+pockets.
 
 ### Near-diagonal continuous failures
 
@@ -61,10 +61,70 @@ exactly $N+2$ reciprocal radii in dimension $2N+3$.
 - proof note: `verification/research-v6.10/REENTRY_NPLUS2_RESULT.md`
 - exact bookkeeping audit: `verification/research-v6.10/reentry_nplus2_audit.js`
 
+## Focused V6.13 results
+
+### General one-radius re-entry adjunction
+
+For every $k\ge2$,
+
+\[
+R(k)\ge k-1.
+\]
+
+Equivalently, $N$ integer-exponent membership changes can be realized with
+exactly $N+1$ reciprocal radii. The induction starts from an exact two-radius
+base point and adds one product-neutral radius at each step.
+
+- proof note: `verification/research-v6.13/REENTRY_KMINUS1_RESULT.md`
+- exact base audit: `verification/research-v6.13/reentry_kminus1_base.py`
+
+### Uniform three-variable topology
+
+For every integer $n\ge4$, the violation set $\mathcal I_n^3$ has exactly
+three connected components, one for each choice of the coordinate below one.
+Every component is simply connected and contractible. The off-axis tongues
+which first appear at exponent $7$ remain attached and create neither extra
+components nor holes.
+
+- proof note: `verification/research-v6.13/TOPOLOGY_ALL_N_RESULT.md`
+- exact algebra/combinatorics audit: `verification/research-v6.13/topology_all_n_audit.py`
+
+### Uniform four-variable ordered pockets
+
+For every integer $n\ge4$, each ordered strict $2+2$ pocket is homeomorphic to
+its labelled three-variable trace sector times an open interval. Adding the
+coordinate-$1$ trace gives a strong deformation retraction onto that trace.
+Since the trace sector is contractible for every $n\ge4$, the strict $2+2$
+locus has exactly twelve contractible components for every such exponent.
+
+- proof note: `verification/research-v6.13/TOPOLOGY_FOUR_ALL_N_RESULT.md`
+- exact finite/uniform audit: `verification/research-v6.13/topology_four_all_n_audit.py`
+
+### Exact five-radius re-entry complexity
+
+For points using exactly five reciprocal radii, the sharp integer-exponent
+membership-change count is
+
+\[
+R(5)=4.
+\]
+
+The lower bound is an exact rational witness. The upper bound is certified by
+an order-five extended-Chebyshev argument for the radial derivative kernel,
+with exact symbolic reduction, rational Bernstein bounds near the origin,
+outward-rounded interval arithmetic on the compact middle range, and an
+analytic exponential tail bound.
+
+- proof note: `verification/research-v6.13/REENTRY_R5_RESULT.md`
+- order-five verifier: `verification/research-v6.13/reentry_r5_verify.py`
+- exact witness replay: `verification/research-v6.13/reentry_r5_witness.py`
+
+The unrestricted order-six derivative kernel is not an ECT system, so the same
+upper-bound mechanism does not automatically settle the six-radius case.
+
 ## Open questions
 
-- topology of the three-variable off-axis tongues from exponent $7$ onward;
-- extension of the four-variable interval-bundle certificate beyond exponent
-  $10$ and attachment of its coordinate traces;
+- the topology of the full four-variable violation set after the ordered
+  pockets are glued to their persistent sign-sector cores;
 - the complete real-exponent four-variable inclusion region; and
-- the sharp upper bound and minimum dimension for re-entry complexity.
+- the sharp general upper bound and minimum dimension for re-entry complexity.
