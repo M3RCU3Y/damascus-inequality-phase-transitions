@@ -36,6 +36,7 @@ def research_checks() -> None:
     run([node, str(RESEARCH / "topology_four_exact.js")], RESEARCH)
     run([node, str(RESEARCH / "reentry_nplus2_audit.js")], RESEARCH)
 
+    python_script(RESEARCH_613, "reentry_kminus1_base.py")
     python_script(RESEARCH_613, "reentry_r5_witness.py")
     python_script(RESEARCH_613, "reentry_r5_verify.py")
 

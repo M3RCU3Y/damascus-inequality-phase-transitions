@@ -3,7 +3,23 @@
 This directory contains later exact checks that are intentionally separated
 from the immutable V6.9 supplement and the V6.10 research bundle.
 
-## Verified result
+## Verified results
+
+### General one-radius adjunction
+
+For every `k>=2`, the re-entry complexity satisfies
+
+\[
+R(k)\ge k-1.
+\]
+
+Equivalently, `N` integer-exponent membership changes can be realized with
+exactly `N+1` reciprocal radii. The proof adds one new radius while preserving
+any prescribed finite set of old signs and forcing one extra eventual sign
+change.
+
+- proof note: `REENTRY_KMINUS1_RESULT.md`
+- exact two-radius base audit: `reentry_kminus1_base.py`
 
 ### Five reciprocal radii
 
@@ -24,14 +40,15 @@ Files:
 Run from this directory:
 
 ```bash
+python reentry_kminus1_base.py
 python reentry_r5_witness.py
 python reentry_r5_verify.py
 ```
 
-The witness uses exact `Fraction` arithmetic. The upper verifier derives the
-Wronskian polynomial symbolically, uses exact rational Bernstein arithmetic
-near the origin, outward-rounded high-precision interval bounds on the compact
-middle interval, and an analytic tail estimate.
+The exact witness scripts use `Fraction` arithmetic. The order-five upper
+verifier derives the Wronskian polynomial symbolically, uses exact rational
+Bernstein arithmetic near the origin, outward-rounded high-precision interval
+bounds on the compact middle interval, and an analytic tail estimate.
 
 ## Current boundary
 

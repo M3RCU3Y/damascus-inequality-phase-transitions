@@ -61,7 +61,22 @@ exactly $N+2$ reciprocal radii in dimension $2N+3$.
 - proof note: `verification/research-v6.10/REENTRY_NPLUS2_RESULT.md`
 - exact bookkeeping audit: `verification/research-v6.10/reentry_nplus2_audit.js`
 
-## Focused V6.13 result
+## Focused V6.13 results
+
+### General one-radius re-entry adjunction
+
+For every $k\ge2$,
+
+\[
+R(k)\ge k-1.
+\]
+
+Equivalently, $N$ integer-exponent membership changes can be realized with
+exactly $N+1$ reciprocal radii. The induction starts from an exact two-radius
+base point and adds one product-neutral radius at each step.
+
+- proof note: `verification/research-v6.13/REENTRY_KMINUS1_RESULT.md`
+- exact base audit: `verification/research-v6.13/reentry_kminus1_base.py`
 
 ### Exact five-radius re-entry complexity
 
