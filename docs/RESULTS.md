@@ -39,8 +39,8 @@ bundle over its labelled three-variable trace sector.
 - proof note: `verification/research-v6.10/TOPOLOGY_FOUR_PARTIAL_RESULT.md`
 - exact audit: `verification/research-v6.10/topology_four_exact.js`
 
-This does not classify components of the full four-variable violation set.
-Coordinate-trace attachments remain a separate problem.
+The later V6.13 theorem removes both finite cutoffs for the strict ordered
+pockets.
 
 ### Near-diagonal continuous failures
 
@@ -89,6 +89,17 @@ components nor holes.
 - proof note: `verification/research-v6.13/TOPOLOGY_ALL_N_RESULT.md`
 - exact algebra/combinatorics audit: `verification/research-v6.13/topology_all_n_audit.py`
 
+### Uniform four-variable ordered pockets
+
+For every integer $n\ge4$, each ordered strict $2+2$ pocket is homeomorphic to
+its labelled three-variable trace sector times an open interval. Adding the
+coordinate-$1$ trace gives a strong deformation retraction onto that trace.
+Since the trace sector is contractible for every $n\ge4$, the strict $2+2$
+locus has exactly twelve contractible components for every such exponent.
+
+- proof note: `verification/research-v6.13/TOPOLOGY_FOUR_ALL_N_RESULT.md`
+- exact finite/uniform audit: `verification/research-v6.13/topology_four_all_n_audit.py`
+
 ### Exact five-radius re-entry complexity
 
 For points using exactly five reciprocal radii, the sharp integer-exponent
@@ -113,7 +124,7 @@ upper-bound mechanism does not automatically settle the six-radius case.
 
 ## Open questions
 
-- extension of the four-variable interval-bundle certificate beyond exponent
-  $10$ and attachment of its coordinate traces;
+- the topology of the full four-variable violation set after the ordered
+  pockets are glued to their persistent sign-sector cores;
 - the complete real-exponent four-variable inclusion region; and
 - the sharp general upper bound and minimum dimension for re-entry complexity.
