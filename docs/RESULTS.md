@@ -78,6 +78,17 @@ base point and adds one product-neutral radius at each step.
 - proof note: `verification/research-v6.13/REENTRY_KMINUS1_RESULT.md`
 - exact base audit: `verification/research-v6.13/reentry_kminus1_base.py`
 
+### Uniform three-variable topology
+
+For every integer $n\ge4$, the violation set $\mathcal I_n^3$ has exactly
+three connected components, one for each choice of the coordinate below one.
+Every component is simply connected and contractible. The off-axis tongues
+which first appear at exponent $7$ remain attached and create neither extra
+components nor holes.
+
+- proof note: `verification/research-v6.13/TOPOLOGY_ALL_N_RESULT.md`
+- exact algebra/combinatorics audit: `verification/research-v6.13/topology_all_n_audit.py`
+
 ### Exact five-radius re-entry complexity
 
 For points using exactly five reciprocal radii, the sharp integer-exponent
@@ -102,7 +113,6 @@ upper-bound mechanism does not automatically settle the six-radius case.
 
 ## Open questions
 
-- topology of the three-variable off-axis tongues from exponent $7$ onward;
 - extension of the four-variable interval-bundle certificate beyond exponent
   $10$ and attachment of its coordinate traces;
 - the complete real-exponent four-variable inclusion region; and
