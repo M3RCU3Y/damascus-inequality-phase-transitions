@@ -37,12 +37,24 @@ Files:
 - `reentry_r5_verify.py` — order-five radial Chebyshev certificate proving the
   matching upper bound.
 
+### Uniform three-variable topology
+
+For every integer `n>=4`, the violation set `I_n^3` has exactly three
+connected components, one for each choice of the coordinate below one. Each
+component is simply connected and hence contractible. In particular, the
+off-axis tongues first visible at exponent `7` remain attached and create no
+new component or hole.
+
+- proof note: `TOPOLOGY_ALL_N_RESULT.md`
+- exact algebra/combinatorics audit: `topology_all_n_audit.py`
+
 Run from this directory:
 
 ```bash
 python reentry_kminus1_base.py
 python reentry_r5_witness.py
 python reentry_r5_verify.py
+python topology_all_n_audit.py
 ```
 
 The exact witness scripts use `Fraction` arithmetic. The order-five upper
