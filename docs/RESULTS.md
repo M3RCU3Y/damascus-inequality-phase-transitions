@@ -35,8 +35,8 @@ V6.13 theorem removes both finite cutoffs.
 ### Near-diagonal continuous failures
 
 For each fixed $B>\sqrt6$, sufficiently large $\mu$ admit an inclusion failure
-across the gap $B\sqrt\mu\,2^{-\mu/2}$. The later zero-width theorem shows that
-this scale and constant are not sharp phase-boundary data.
+across the gap $B\sqrt\mu\,2^{-\mu/2}$. The later V6.14 finite-threshold and
+right-half-plane theorems supersede the qualitative high-exponent cutoff.
 
 ### Re-entry construction
 
@@ -87,9 +87,8 @@ The persistent strict $3+1$ core has a unique continuous birth at
 \nu_{31}=1.927014405732976\ldots
 \]
 
-and no later interior zero-critical event. Compactified boundary crossings are
-transverse in the full core and do not change its homotopy type. Combining
-this with the ordered-pocket retractions gives
+and no later interior zero-critical event. Combining the persistent-core
+continuation with the ordered-pocket retractions gives
 
 \[
 \mathcal I_1^4=\varnothing,
@@ -100,38 +99,181 @@ connected components, each contractible.
 
 - proof note: `verification/research-v6.13/TOPOLOGY_FOUR_FULL_RESULT.md`
 - symbolic/Sturm audit: `verification/research-v6.13/full_four_topology_audit.py`
-
-### Exact five-radius re-entry complexity
-
-For exactly five reciprocal radii,
-
-\[
-R(5)=4.
-\]
-
-- proof note: `verification/research-v6.13/REENTRY_R5_RESULT.md`
-- upper-bound verifier: `verification/research-v6.13/reentry_r5_verify.py`
-- exact witness: `verification/research-v6.13/reentry_r5_witness.py`
-
-The unrestricted order-six derivative kernel is not an ECT system, so this
-upper-bound mechanism does not automatically settle the six-radius case.
+- explicit boundary-positive continuation lemma:
+  `verification/research-v6.14/TOPOLOGY_CONTINUATION_LEMMA.md`
 
 ### High-exponent zero-width inclusion failure
 
-For every sufficiently large real $\mu$, there is $\delta_\mu>0$ such that
-
-\[
-\mathcal I_{\mu-\varepsilon}^4\not\subseteq\mathcal I_\mu^4
-\qquad(0<\varepsilon<\delta_\mu).
-\]
-
-Thus the local forward-inclusion width is zero at high exponent.
+V6.13 proved zero local forward-inclusion width for every sufficiently large
+real target exponent. The V6.14 fixed-slice theorem replaces this with an
+explicit finite threshold and is therefore the current stronger statement.
 
 - proof note: `verification/research-v6.13/CONTINUOUS_ZERO_WIDTH_RESULT.md`
 - sanity replay: `verification/research-v6.13/continuous_zero_width_check.py`
 
-## Open questions
+## Focused V6.14 results
 
-- the complete finite real-exponent four-variable inclusion region;
-- the sharp general upper bound for re-entry complexity; and
-- the sharp minimum-dimension/radius tradeoff for prescribed re-entry counts.
+### Exact low-radius re-entry law
+
+The missing lower-order Wronskian dependencies in the five-radius argument
+have been independently certified. Together with the V6.13 lower construction,
+
+\[
+\boxed{R(k)=k-1\qquad(2\le k\le5).}
+\]
+
+- proof note: `verification/research-v6.14/REENTRY_LOW_RADIUS_EXACT_RESULT.md`
+- verifier: `verification/research-v6.14/reentry_low_order_verify.py`
+- order-five proof/witness remain in `verification/research-v6.13/`
+
+The unrestricted order-six normalized Wronskian changes sign, so the same ECT
+mechanism does not by itself settle $R(6)$.
+
+### Exponent-ratio monotonicity
+
+For $0<\nu<\mu$,
+
+\[
+R_{\nu,\mu}(t)=\frac{\phi_\mu(t)}{\phi_\nu(t)}
+\]
+
+is reciprocal-invariant and strictly decreasing for $t>1$, with limits
+$\mu/\nu$ at $1+$ and $1$ at infinity. This converts a $2+2$ source-boundary
+comparison into an equal-mass weighted-average problem with one decreasing
+radial multiplier.
+
+- proof note: `verification/research-v6.14/CONTINUOUS_RATIO_MONOTONICITY_RESULT.md`
+
+### Single-transient theorem for strict $2+2$ histories
+
+Every strict four-variable $2+2$ point has at most two positive real-exponent
+zeros. Hence on exponents at least one its violation set is empty or one
+bounded open interval. The continuous inclusion problem is therefore an
+envelope of single transient intervals rather than a multiple-re-entry
+problem.
+
+- proof note: `verification/research-v6.14/FOUR_VARIABLE_SINGLE_TRANSIENT_RESULT.md`
+
+### Exact continuous onset of the strict $2+2$ locus
+
+Let
+
+\[
+\nu_c=3.9826231561383400589\ldots
+\]
+
+be the exact three-variable onset. Then
+
+\[
+\mathcal I_{\nu,2+2}^4\ne\varnothing
+\quad\Longleftrightarrow\quad
+\nu>\nu_c.
+\]
+
+Consequently the complete four-variable inclusion region contains the exact
+left half-plane
+
+\[
+\boxed{
+0<\nu\le\nu_c,\quad\mu>\nu
+\Longrightarrow
+\mathcal I_\nu^4\subseteq\mathcal I_\mu^4.}
+\]
+
+- proof note: `verification/research-v6.14/CONTINUOUS_FOUR_ONSET_RESULT.md`
+- algebra audit: `verification/research-v6.14/continuous_four_onset_audit.py`
+
+### Certified symmetric fold
+
+Inside the equal-above strict $2+2$ family there is a unique stationary fold in
+a radius-$10^{-20}$ box around
+
+\[
+\nu_\dagger=7.3596318961093494297131900223\ldots.
+\]
+
+The interval Krawczyk certificate proves that the exponent double root and the
+geometric stationary point are nondegenerate. The local stationary-envelope
+slope is
+
+\[
+\mu_{\rm sym}'(\nu_\dagger^-)=-1.
+\]
+
+- proof note: `verification/research-v6.14/SYMMETRIC_FOLD_RESULT.md`
+- verifier: `verification/research-v6.14/symmetric_fold_certificate.py`
+
+This is a local symmetric-family theorem; global equal-above extremality is
+still the remaining step needed to identify the fold itself as the exact
+sharp inclusion-collapse point.
+
+### Large-target end of the stationary symmetric envelope
+
+The stationary symmetric branch approaches the exact three-variable onset and
+satisfies
+
+\[
+\mu(\nu-\nu_c)\longrightarrow
+11.84876850437540567\ldots.
+\]
+
+The onset point and the asymptotic constant are interval-certified.
+
+- proof note: `verification/research-v6.14/SYMMETRIC_ENVELOPE_ASYMPTOTIC_RESULT.md`
+- verifier: `verification/research-v6.14/symmetric_envelope_asymptotic.py`
+
+### Explicit finite zero-width threshold
+
+Using one fixed rational geometric slice, every target
+
+\[
+\mu\ge7.3596319
+\]
+
+has zero local forward-inclusion width. The compact range is validated by
+outward-rounded interval arithmetic and the infinite tail by explicit analytic
+bounds.
+
+- proof note: `verification/research-v6.14/FIXED_SLICE_ZERO_WIDTH_RESULT.md`
+- verifier: `verification/research-v6.14/fixed_slice_zero_width_certificate.py`
+
+The rational threshold lies only about $3.89\times10^{-9}$ above the
+independently certified symmetric fold.
+
+### Full right-half-plane noninclusion
+
+The same fixed-slice target-boundary witnesses can be transported back to the
+fixed source exponent $7.3596319$. A validated monotone root tube proves that
+for every
+
+\[
+\boxed{7.3596319\le\nu<\mu}
+\]
+
+one has
+
+\[
+\boxed{\mathcal I_\nu^4\not\subseteq\mathcal I_\mu^4.}
+\]
+
+Thus the complete continuous inclusion problem is rigorously confined to the
+finite source strip
+
+\[
+\boxed{
+3.9826231561383400589\ldots<\nu<7.3596319.}
+\]
+
+- proof note: `verification/research-v6.14/RIGHT_HALFPLANE_NONINCLUSION_RESULT.md`
+- verifier: `verification/research-v6.14/right_halfplane_certificate.py`
+
+## Current open questions
+
+1. Prove the global equal-above extremality theorem in the finite strip
+   $\nu_c<\nu<7.3596319$, thereby identifying the complete finite
+   real-exponent four-variable inclusion boundary and deciding whether the
+   certified symmetric fold is the exact sharp collapse threshold.
+2. Determine $R(k)$ for $k\ge6$. In particular, decide whether the exact law
+   $R(k)=k-1$ continues after the unrestricted order-six ECT failure.
+3. Determine the sharp minimum-dimension/radius tradeoff for prescribed
+   re-entry counts.
