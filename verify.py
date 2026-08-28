@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent
 LEGACY = ROOT / "verification" / "release-v6.9"
 RESEARCH = ROOT / "verification" / "research-v6.10"
 RESEARCH_613 = ROOT / "verification" / "research-v6.13"
+RESEARCH_614 = ROOT / "verification" / "research-v6.14"
 
 
 def run(command: list[str], cwd: Path) -> None:
@@ -43,6 +44,12 @@ def research_checks() -> None:
     python_script(RESEARCH_613, "topology_four_all_n_audit.py")
     python_script(RESEARCH_613, "full_four_topology_audit.py")
     python_script(RESEARCH_613, "continuous_zero_width_check.py")
+
+    python_script(RESEARCH_614, "reentry_low_order_verify.py")
+    python_script(RESEARCH_614, "continuous_four_onset_audit.py")
+    python_script(RESEARCH_614, "symmetric_fold_certificate.py")
+    python_script(RESEARCH_614, "symmetric_envelope_asymptotic.py")
+    python_script(RESEARCH_614, "fixed_slice_zero_width_certificate.py")
 
 
 def quick_checks() -> None:
