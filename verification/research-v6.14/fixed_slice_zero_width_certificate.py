@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from decimal import Decimal, localcontext, ROUND_FLOOR, ROUND_CEILING, getcontext
 getcontext().prec=80
-PREC=70; GUARD=20; CUSH=Decimal(10)**Decimal(-(PREC-8))
+PREC=110; GUARD=35; CUSH=Decimal(10)**Decimal(-(PREC-8))
 
 class I:
     __slots__=('lo','hi')
@@ -66,7 +66,7 @@ class D1:
     def ln(self):return D1(self.v.ln(),self.d/self.v)
 def dd(x):return x if isinstance(x,D1) else D1(x)
 
-T=I(Decimal('1.71237')); C=T.ln(); QL=I(Decimal('0.71237')); QU=I(Decimal('0.76738')); M0=Decimal('7.36')
+T=I(Decimal('1.7123734016')); C=T.ln(); QL=I(Decimal('0.7123734016')); QU=I(Decimal('0.76735695')); M0=Decimal('7.3596319')
 
 def FD(m,q,dervar=None):
     M=D1(m,1 if dervar=='m' else 0); Q=D1(q,1 if dervar=='q' else 0)
@@ -85,7 +85,7 @@ def cert_box(mlo,mhi,qlo,qhi):
     Fq,Dq=FD(M,Q,'q')
     return Fq.d,Dq.d
 
-def adaptive_rect(mlo,mhi,qlo,qhi,depth=0,maxdepth=18):
+def adaptive_rect(mlo,mhi,qlo,qhi,depth=0,maxdepth=28):
     fq,dq=cert_box(mlo,mhi,qlo,qhi)
     if fq.lo>0 and dq.lo>0:return 1,(fq.lo,dq.lo),depth
     if depth>=maxdepth:
@@ -97,7 +97,7 @@ def adaptive_rect(mlo,mhi,qlo,qhi,depth=0,maxdepth=18):
         a=adaptive_rect(mlo,mhi,qlo,qw,depth+1,maxdepth);b=adaptive_rect(mlo,mhi,qw,qhi,depth+1,maxdepth)
     return a[0]+b[0],(min(a[1][0],b[1][0]),min(a[1][1],b[1][1])),max(a[2],b[2])
 
-def adaptive_1d(kind,mlo,mhi,q,depth=0,maxdepth=22):
+def adaptive_1d(kind,mlo,mhi,q,depth=0,maxdepth=42):
     M=I(mlo,mhi);Q=I(q)
     F,D=FD(M,Q,None)
     if kind=='flo': good=F.v.hi<0; margin=-F.v.hi
