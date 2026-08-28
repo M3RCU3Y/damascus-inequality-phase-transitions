@@ -50,6 +50,7 @@ def research_checks() -> None:
     python_script(RESEARCH_614, "symmetric_fold_certificate.py")
     python_script(RESEARCH_614, "symmetric_envelope_asymptotic.py")
     python_script(RESEARCH_614, "fixed_slice_zero_width_certificate.py")
+    python_script(RESEARCH_614, "right_halfplane_certificate.py")
 
 
 def quick_checks() -> None:
