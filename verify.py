@@ -15,6 +15,7 @@ LEGACY = ROOT / "verification" / "release-v6.9"
 RESEARCH = ROOT / "verification" / "research-v6.10"
 RESEARCH_613 = ROOT / "verification" / "research-v6.13"
 RESEARCH_614 = ROOT / "verification" / "research-v6.14"
+RESEARCH_615 = ROOT / "verification" / "research-v6.15"
 
 
 def run(command: list[str], cwd: Path) -> None:
@@ -52,6 +53,10 @@ def research_checks() -> None:
     python_script(RESEARCH_614, "fixed_slice_zero_width_certificate.py")
     python_script(RESEARCH_614, "right_halfplane_certificate.py")
     python_script(RESEARCH_614, "fold_right_halfplane_certificate.py")
+
+    # V6.15 currently contains reduction identities only.  This audit proves
+    # those identities exactly; it does not assert the conjectural KKT signs.
+    python_script(RESEARCH_615, "kkt_orientation_identity_check.py")
 
 
 def quick_checks() -> None:
