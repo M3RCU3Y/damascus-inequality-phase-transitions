@@ -59,6 +59,7 @@ def research_checks() -> None:
     python_script(RESEARCH_615, "full_large_target_rigidity_audit.py")
     python_script(RESEARCH_615, "lower_middle_competitive_ceiling.py")
     python_script(RESEARCH_615, "low_radius_global_certificate.py")
+    python_script(RESEARCH_615, "lower_geometry_walls.py")
 
 
 def quick_checks() -> None:
