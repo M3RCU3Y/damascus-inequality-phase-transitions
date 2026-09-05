@@ -54,9 +54,11 @@ def research_checks() -> None:
     python_script(RESEARCH_614, "right_halfplane_certificate.py")
     python_script(RESEARCH_614, "fold_right_halfplane_certificate.py")
 
-    # V6.15 currently contains reduction identities only.  This audit proves
-    # those identities exactly; it does not assert the conjectural KKT signs.
+    # V6.15 exact reductions and promoted certified statements.
     python_script(RESEARCH_615, "kkt_orientation_identity_check.py")
+    python_script(RESEARCH_615, "full_large_target_rigidity_audit.py")
+    python_script(RESEARCH_615, "lower_middle_competitive_ceiling.py")
+    python_script(RESEARCH_615, "low_radius_global_certificate.py")
 
 
 def quick_checks() -> None:
