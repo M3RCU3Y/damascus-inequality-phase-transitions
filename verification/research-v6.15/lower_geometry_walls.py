@@ -16,6 +16,9 @@ boundaries:
 
 for nu_c <= nu <= 6, 1<=y<=x, xy<=4.
 
+Finally it checks the exact rational base inequality used to prove
+h'_mu(z)>0 for every mu>=85 and z>=28/25.
+
 All Bernstein decisions are exact rationals.  The curvature decision uses
 outward-rounded Decimal intervals.
 """
@@ -185,7 +188,6 @@ def certify_curvature(box,depth=0,maxdepth=22,stats=None):
 
 if __name__=='__main__':
     print('LOWER-MIDDLE GEOMETRY WALL CERTIFICATES')
-    # Exact location of the symmetric n=6 positive interval relative to rational walls.
     assert sp.count_roots(P6,sp.Rational(1),sp.Rational(3,2))==1
     assert sp.count_roots(P6,sp.Rational(3,2),sp.Rational(2))==1
     assert P6.subs(t,sp.Rational(57,50))>0
@@ -207,4 +209,11 @@ if __name__=='__main__':
     print('continuous source-curvature boxes:',stats)
     assert stats['worst']<0
     print('VERIFIED: x h_nu_prime(x)+y h_nu_prime(y)<0 for nu_c<=nu<=6, xy<=4')
+
+    # Exact base inequality for the mu>=85 target-curvature tail.
+    r=Fraction(25,28); a=85
+    tail=Fraction((a+1)**2)*r**a + Fraction(a*a+4*a+1)*r**(a+1)
+    assert tail < 1
+    print('mu=85 tail correction =',tail)
+    print('verified base inequality for h_mu_prime(z)>0 on mu>=85, z>=28/25')
     print('PASSED')
